@@ -4,6 +4,11 @@ public class ScoreDTO {
     private String name;
     private String score;
 
+    public ScoreDTO(String name, String score) {
+        this.name = name;
+        this.score = score;
+    }
+
     public String getName() {
         return name;
     }

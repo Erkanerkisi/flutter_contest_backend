@@ -33,7 +33,8 @@ public class BoardController {
     }
 
     @GetMapping(value = "/getBoard")
-    public @ResponseBody List<Score> getBoard() {
-        return scoreBoard.stream().limit(10).collect(Collectors.toList());
+    public @ResponseBody
+    List<ScoreDTO> getBoard() {
+        return scoreBoard.stream().map(s -> new ScoreDTO(s.getName(), String.valueOf(s.getScore()))).limit(10).collect(Collectors.toList());
     }
 }
